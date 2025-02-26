@@ -2,7 +2,7 @@
 
 ### Overview
 
-This project addresses the Vehicle Routing Problem (VRP), focusing on optimizing last-mile delivery routes for vehicles serving a set of customers from one or more depots. The primary objective is to minimize the total distance traveled by delivery vehicles while ensuring all customers are served efficiently. To achieve this, heuristic algorithms such as Nearest Neighbor and 2-opt local search were implemented and evaluated. The project leverages customer and depot location data to generate and improve delivery routes.
+This project aims to solve the Multi-Depot Vehicle Routing Problem (MDVRP) by optimizing delivery routes from multiple depots to a set of customers. The main objectives are to minimize travel costs, improve delivery efficiency, and balance the workload among depots.
 
 ###  Objective
 
@@ -12,17 +12,14 @@ The main goal of this project is to:
 2. **Evaluate Heuristic Algorithms**: Assess the performance of algorithms like the Nearest Neighbor heuristic, 2-opt optimization, and a hybrid approach.
 3. **Improve Upon Baseline Solutions**: Highlight improvements in route efficiency through heuristic optimizations.
 
-### Problem Statement
-
-Efficient route planning is a critical challenge in logistics, with implications for reducing delivery costs, improving customer satisfaction, and minimizing environmental impact. This project aims to:
-
-- Develop algorithms that minimize travel distance and time.
-- Provide scalable solutions that adapt to various logistical scenarios.
-- Ensure solutions are computationally efficient and practical for real-world deployment.
-
 ### Dataset
 
-The dataset used in this project is contained in the file 19MDVRP Problem Sets.xlsx. It consists of customer and depot locations, represented as x and y coordinates, and includes additional information relevant to the VRP. It includes:
+The dataset used in this project is contained in the file 19MDVRP Problem Sets.xlsx. The dataset is sourced from an Excel file containing multiple MDVRP scenarios, each under a separate sheet named 'Problem 1', 'Problem 2', ..., up to 'Problem 19'.
+
+- Currently, the code explicitly loads the sheet named 'Problem 1'.
+- Future analysis can be extended to other problems by modifying the sheet name in the code.
+
+It includes:
 
 - **x coordinate**: X-axis location of customers.
 - **y coordinate**: Y-axis location of customers.
@@ -30,25 +27,6 @@ The dataset used in this project is contained in the file 19MDVRP Problem Sets.x
 - **Depot y coordinate**: Y-axis location of the depot.
 - **Customer Number**: Unique identifier for customers.
 - **Demand**: The number of units each customer requires (if applicable).
-
-### Solution Approach
-
-Data: Traffic patterns, delivery windows, customer locations, and depot coordinates.
-
-Methods:
-
-- Modeled the Vehicle Routing Problem (VRP) with time constraints.
-- Implemented heuristic optimization algorithms, such as Nearest Neighbor and 2-opt local search, to identify and improve routes.
-- Evaluated route efficiency by comparing the initial and optimized delivery routes in terms of total distance and time.
-- Tools: Python (NumPy, NetworkX, Matplotlib).
-
-### Visualizations
-
-The following visualizations are generated:
-
-1. **Scatter Plots** of customer and depot locations to visually represent delivery points.
-2. **Route Path**: The delivery route is plotted on a 2D plane showing the order in which customers are visited.
-3. **Map Visualization**: Using `folium`, routes are plotted on a map to provide geographical context.
 
 ### Heuristic Algorithms
 
@@ -66,27 +44,16 @@ The **2-opt** optimization is a local search algorithm that attempts to improve 
 - Optimized Cost (2-Opt): 430.72
 - Total Improvement: The 2-Opt algorithm improved the route by reducing the total cost by approximately 10%.
 
-### Key Insights
+### Results
 
-1. Optimization Impact:
-- The 2-opt algorithm significantly improved route efficiency over the Nearest Neighbor baseline.
-
-2. Practical Feasibility:
-- Heuristic algorithms provide quick and effective solutions for real-world logistics problems.
+- The Nearest Neighbor Heuristic provided an initial route with a total cost of 478.42.
+- After applying the 2-Opt Algorithm, the optimized route cost was reduced to 430.72, achieving a 9.97% reduction in total travel cost.
 
 ### Future Directions
 
-1. Dynamic Route Optimization:
-- Integrate real-time traffic and weather data for adaptive routing.
-
-2. Environmental Considerations:
-- Include carbon footprint minimization as an optimization objective.
-
-3. Advanced Algorithms:
-- Explore machine learning approaches, such as reinforcement learning, for dynamic decision-making.
-
-4. Multi-Objective Optimization:
-- Simultaneously optimize for cost, time, and environmental impact.
+1. Extend the analysis to other problems (2 to 19) for a comprehensive evaluation.
+2. Explore advanced metaheuristics like Tabu Search or Genetic Algorithms.
+3. Implement visualization tools to display optimized routes.
 
 ### Source
 
