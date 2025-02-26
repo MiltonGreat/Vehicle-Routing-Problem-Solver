@@ -38,12 +38,6 @@ The **Nearest Neighbor** heuristic builds a route by iteratively visiting the ne
 
 The **2-opt** optimization is a local search algorithm that attempts to improve an existing route by iteratively reversing segments of the route and checking whether this leads to a reduction in the total travel distance. The 2-opt method helps eliminate unnecessary detours, resulting in a shorter route.
 
-### Performance Evaluation
-
-- Nearest Neighbor Cost: 478.42
-- Optimized Cost (2-Opt): 430.72
-- Total Improvement: The 2-Opt algorithm improved the route by reducing the total cost by approximately 10%.
-
 ### Results
 
 - The Nearest Neighbor Heuristic provided an initial route with a total cost of 478.42.
